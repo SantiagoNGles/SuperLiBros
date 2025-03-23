@@ -11,4 +11,6 @@ $featuredGames = []; // Replace with actual data from a model
 
 // Display the home view
 $title = "SuperLiBros - Accueil";
+include_once ROOT_PATH . '/app/views/header.php';
 include_once ROOT_PATH . '/app/views/home.php';
+include_once ROOT_PATH . '/app/views/footer.php';

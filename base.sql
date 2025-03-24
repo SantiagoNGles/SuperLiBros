@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS libraries;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS users;
 
@@ -8,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password_hashed VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -47,7 +48,7 @@ CREATE TABLE IF NOT EXISTS favorites (
 );
 
 -- Insertion de données d'exemple dans 'users'
-INSERT INTO users (username, email, password_hashed) VALUES
+INSERT INTO users (username, email, password) VALUES
 ('john_doe', 'john@example.com', '$2y$10$CkPjkmpe9V5Ug5s6TtsWkOZq7XjTLB9U5ry.BhnA9cI2F5Khcz5t6'),  -- password : 'password123'
 ('admin_user', 'admin@example.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y');  -- password : 'admin123'
 

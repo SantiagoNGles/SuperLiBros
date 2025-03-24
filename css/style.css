@@ -194,38 +194,33 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  margin: 30px 0;
 }
 
 .game-card {
-  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
-.game-image {
+.game-card img {
   width: 100%;
-  height: 150px;
+  height: 300px;
   object-fit: cover;
 }
 
-.game-card h4 {
-  padding: 15px 15px 5px;
-  font-size: 1.2rem;
-  color: #333;
+.game-info {
+  padding: 15px;
 }
 
-.game-card p {
-  padding: 0 15px 15px;
-  color: #666;
-  font-size: 0.9rem;
+.game-info h3 {
+  margin-top: 0;
+  color: #333;
 }
 
 /* Buttons */
@@ -249,6 +244,21 @@ p {
   margin: 20px 0;
   display: flex;
   gap: 10px;
+}
+
+.btn-favorite {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-favorite:hover {
+  background-color: #45a049;
 }
 
 /* Forms */
@@ -345,6 +355,14 @@ footer {
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid #444;
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  padding: 10px;
 }
 
 /* Responsive Design */

@@ -9,6 +9,7 @@ function controleurPrincipal($action) {
         "logout" => "logout.php",
         "profile" => "profile.php",
         "deleteAccount" => "deleteAccount.php",
+        "games" => "games.php",
     ];
 
     return $lesActions[$action] ?? $lesActions["home"];

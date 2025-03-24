@@ -19,16 +19,16 @@
                     <li><a href="<?php echo BASE_URL; ?>?action=home">Accueil</a></li>
                     <li><a href="<?php echo BASE_URL; ?>?action=games">Jeux</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="<?php echo BASE_URL; ?>?action=favorites">Mes favoris</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>?action=myReviews">Mes avis</a></li>
                         <li>
                             <div class="dropdown">
                                 <button class="dropbtn"><?php echo htmlspecialchars($_SESSION['username']); ?></button>
                                 <div class="dropdown-content">
                                     <a href="<?php echo BASE_URL; ?>?action=profile">Mon profil</a>
-                                    <a href="<?php echo BASE_URL; ?>?action=logout">Déconnexion</a>
+                                    <a href="<?php echo BASE_URL; ?>?action=favorites">Mes favoris</a>
+                                    <a href="<?php echo BASE_URL; ?>?action=myReviews">Mes avis</a>
                                 </div>
                             </div>
+                            <a href="<?php echo BASE_URL; ?>?action=logout">Déconnexion</a>
                         </li>
                     <?php else: ?>
                         <li><a href="<?php echo BASE_URL; ?>?action=login">Connexion</a></li>

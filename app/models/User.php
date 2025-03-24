@@ -29,4 +29,22 @@ class User {
             return "Une erreur est survenue. Veuillez réessayer.";
         }
     }
+
+    public function authenticate($username, $password) {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = :username");
+            $stmt->execute(['username' => $username]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user && password_verify($password, $user['password'])) {
+                return $user;
+            }
+
+            return false;
+        } catch (PDOException $e) {
+            error_log("Erreur d'authentification : " . $e->getMessage());
+            return false;
+        }
+    }
+
 }

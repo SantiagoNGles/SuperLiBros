@@ -104,4 +104,15 @@ class User {
         }
     }
 
+    public function deleteUserById($id) {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
+            return $stmt->execute(['id' => $id]);
+        } catch (PDOException $e) {
+            error_log("Erreur deleteUserById : " . $e->getMessage());
+            return false;
+        }
+    }
+    
+
 }

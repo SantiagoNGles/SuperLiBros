@@ -17,12 +17,10 @@ if (!empty($_SESSION['message'])) {
 <?php if ($user): ?>
     <div id="profile-display">
         <h3>Vos informations</h3>
-        <p><strong>Nom d'utilisateur:</strong> <?php echo htmlspecialchars($user['username']); ?>
-        <br \>
+        <p><strong>Nom d'utilisateur:</strong> <?php echo htmlspecialchars($user['username']); ?> 
            <button type="button" onclick="showEditUsername()">Modifier</button>
         </p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?> 
-        <br \>
            <button type="button" onclick="showEditEmail()">Modifier</button>
         </p>
     </div>
@@ -52,6 +50,21 @@ if (!empty($_SESSION['message'])) {
             <button type="button" onclick="hideEditEmail()">Annuler</button>
         </form>
     </div>
+
+    <form id="delete-account-form" action="<?php echo BASE_URL; ?>?action=deleteAccount" method="post" style="margin-top: 20px;">
+        <button type="button" onclick="confirmDeleteAccount()" style="background-color: red; color: white; padding: 10px; border: none; cursor: pointer;">
+            Supprimer mon compte
+        </button>
+    </form>
+
+    <script>
+        function confirmDeleteAccount() {
+            if (confirm("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.")) {
+                document.getElementById('delete-account-form').submit();
+            }
+        }
+    </script>
+
 
     <script>
         function showEditUsername() {

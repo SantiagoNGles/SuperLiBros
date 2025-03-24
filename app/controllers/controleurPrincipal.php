@@ -7,7 +7,8 @@ function controleurPrincipal($action) {
         "login" => "login.php",
         "register" => "register.php",
         "logout" => "logout.php",
-        "profile" => "profile.php"
+        "profile" => "profile.php",
+        "deleteAccount" => "deleteAccount.php",
     ];
 
     return $lesActions[$action] ?? $lesActions["home"];

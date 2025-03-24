@@ -47,4 +47,61 @@ class User {
         }
     }
 
+    public function getUserById($id) {
+        try {
+            $stmt = $this->conn->prepare("SELECT id, username, email, email FROM users WHERE id = :id");
+            $stmt->execute(['id' => $id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+            return $user ? $user : false; // Retourne false au lieu de []
+        } catch (PDOException $e) {
+            error_log("Erreur getUserById : " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function updateUsername($id, $username) {
+        try {
+            // Vérifier si le nom d'utilisateur existe déjà
+            $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE username = ? AND id != ?");
+            $stmt->execute([$username, $id]);
+            $count = $stmt->fetchColumn();
+    
+            if ($count > 0) {
+                return false; // Le nom d'utilisateur existe déjà
+            }
+    
+            $stmt = $this->conn->prepare("UPDATE users SET username = :username WHERE id = :id");
+            return $stmt->execute([
+                'username' => $username,
+                'id' => $id
+            ]);
+        } catch (PDOException $e) {
+            error_log("Erreur updateUsername : " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function updateEmail($id, $email) {
+        try {
+            // Vérifier si l'email existe déjà
+            $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE email = ? AND id != ?");
+            $stmt->execute([$email, $id]);
+            $count = $stmt->fetchColumn();
+    
+            if ($count > 0) {
+                return false; // L'email existe déjà
+            }
+    
+            $stmt = $this->conn->prepare("UPDATE users SET email = :email WHERE id = :id");
+            return $stmt->execute([
+                'email' => $email,
+                'id' => $id
+            ]);
+        } catch (PDOException $e) {
+            error_log("Erreur updateEmail : " . $e->getMessage());
+            return false;
+        }
+    }
+
 }

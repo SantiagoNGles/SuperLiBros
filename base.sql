@@ -49,22 +49,32 @@ CREATE TABLE IF NOT EXISTS favorites (
 
 -- Insertion de données d'exemple dans 'users'
 INSERT INTO users (username, email, password) VALUES
-('john_doe', 'john@example.com', '$2y$10$CkPjkmpe9V5Ug5s6TtsWkOZq7XjTLB9U5ry.BhnA9cI2F5Khcz5t6'),  -- password : 'password123'
-('admin_user', 'admin@example.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y');  -- password : 'admin123'
+('john_doe', 'john@doe.com', '$2y$10$CkPjkmpe9V5Ug5s6TtsWkOZq7XjTLB9U5ry.BhnA9cI2F5Khcz5t6'),
+('Santiagoat', 'sntg@goat.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('TheFreshMonster', 'fresh@monster.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('Narvalito', 'narv@lito.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('MacYannito', 'mac@yannito.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('SWITZ', 'switz@gmail.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('Hinqo', 'hinqo@gmail.com', '$2y$10$Y4elseBeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('Nabdar', 'nabdar@gmail.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y'),
+('JeF*Nezeuko', 'jef@nezeuko.com', '$2y$10$Y4.vl9BeAodPZopzPfVnWOIaaO2fZ9eqlyqMw0v6m/Z8X56P9sE1y');
 
 -- Insertion de données d'exemple dans 'games'
 INSERT INTO games (title, developer, release_date, image_url, description) VALUES
-('The Legend of Zelda: Breath of the Wild', 'Nintendo', '2017-03-03', 'images/zelda.jpg', "Un jeu d'aventure en monde ouvert où Link doit sauver Hyrule."),
+('Super mario Bros.', 'Nintendo', '1985-07-01', 'images/mario.jpg', "Le grand classique du jeu vidéo où Mario doit sauver la Princesse Peach."),
+('Super Mario 64', 'Nintendo', '2001-07-01', 'images/mario64.jpg', "Un jeu d'aventure où Mario doit sauver la Princesse Peach."),
 ('Super Mario Odyssey', 'Nintendo', '2017-10-27', 'public/mario.jpg', 'Mario voyage à travers différents royaumes pour sauver la princesse Peach.'),
-('Metroid Prime', 'Retro Studios', '2002-11-17', 'images/metroid.jpg', "Samus Aran explore la planète Tallon IV dans ce FPS d'aventure.");
+('The Legend of Zelda: Breath of the Wild', 'Nintendo', '2017-03-03', 'images/zelda.jpg', "Un jeu d'aventure en monde ouvert où Link doit sauver Hyrule.");
+
 
 -- Insertion de données d'exemple dans 'reviews'
 INSERT INTO reviews (user_id, game_id, comment, rating) VALUES
-(1, 1, "Un jeu absolument incroyable! L'exploration et les puzzles sont exceptionnels.", 5),
-(2, 2, 'Un excellent platformer 3D avec des mécaniques innovantes.', 4);
+(1, 2, "Un jeu absolument incroyable! L'exploration et les puzzles sont exceptionnels.", 5),
+(2, 1, 'Le meilleur jeu de tous les temps. Voilà.', 5);
+
 
 -- Insertion de données d'exemple dans 'favorites'
 INSERT INTO favorites (user_id, game_id) VALUES
-(1, 1),
-(1, 2),
-(2, 3);
+(1, 3),
+(1, 4),
+(2, 2);

@@ -12,6 +12,7 @@ function controleurPrincipal($action)
         "deleteAccount" => "deleteAccount.php",
         "games" => "games.php",
         "myfavorites" => "favorites.php",
+        "getGamePlatforms" => "platforms.php",
         "mycollection" => "collection.php",
     ];
 

@@ -323,6 +323,73 @@ small {
   margin-top: 5px;
 }
 
+/* Formulaire d'ajout de jeu */
+.add-game-form {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.add-game-form .form-group {
+  margin-bottom: 15px;
+}
+
+.add-game-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-game-form select,
+.add-game-form button {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Notation par étoiles */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: #ddd;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating input:hover ~ label {
+  color: gold;
+}
+
+/* Tableau de collection */
+.collection-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collection-table th,
+.collection-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.collection-table th {
+  background-color: #f2f2f2;
+}
+
+.collection-table .game-thumbnail {
+  max-width: 100px;
+  height: auto;
+}
+
 /* Footer */
 footer {
   background-color: #333;

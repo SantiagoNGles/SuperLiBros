@@ -27,7 +27,7 @@
                                 <button class="dropbtn"><?php echo htmlspecialchars($_SESSION['username']); ?></button>
                                 <div class="dropdown-content">
                                     <a href="<?php echo BASE_URL; ?>?action=profile">Mon profil</a>
-                                    <a href="<?php echo BASE_URL; ?>?action=collection">Ma collection</a>
+                                    <a href="<?php echo BASE_URL; ?>?action=mycollection">Ma collection</a>
                                     <a href="<?php echo BASE_URL; ?>?action=myfavorites">Mes favoris</a>
                                     <a href="<?php echo BASE_URL; ?>?action=myReviews">Mes avis</a>
                                 </div>

@@ -15,6 +15,7 @@
                     <li><a href="<?php echo BASE_URL; ?>?action=home">Accueil</a></li>
                     <li><a href="<?php echo BASE_URL; ?>?action=games">Jeux</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
+                        <li><a href="<?php echo BASE_URL; ?>?action=mycollection">Ma collection</a></li>
                         <li><a href="<?php echo BASE_URL; ?>?action=favorites">Mes favoris</a></li>
                         <li><a href="<?php echo BASE_URL; ?>?action=myReviews">Mes avis</a></li>
                     <?php else: ?>

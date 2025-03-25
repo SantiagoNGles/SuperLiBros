@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($title) ? htmlspecialchars($title) : 'SuperLiBros - Votre bibliothèque de jeux vidéo'; ?></title>
+    <title><?php echo isset($title) ? htmlspecialchars($title) : 'SuperLiBros - Votre bibliothèque de jeux vidéo'; ?>
+    </title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -24,7 +27,8 @@
                                 <button class="dropbtn"><?php echo htmlspecialchars($_SESSION['username']); ?></button>
                                 <div class="dropdown-content">
                                     <a href="<?php echo BASE_URL; ?>?action=profile">Mon profil</a>
-                                    <a href="<?php echo BASE_URL; ?>?action=favorites">Mes favoris</a>
+                                    <a href="<?php echo BASE_URL; ?>?action=collection">Ma collection</a>
+                                    <a href="<?php echo BASE_URL; ?>?action=myfavorites">Mes favoris</a>
                                     <a href="<?php echo BASE_URL; ?>?action=myReviews">Mes avis</a>
                                 </div>
                             </div>

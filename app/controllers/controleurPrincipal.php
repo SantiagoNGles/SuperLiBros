@@ -11,7 +11,8 @@ function controleurPrincipal($action)
         "profile" => "profile.php",
         "deleteAccount" => "deleteAccount.php",
         "games" => "games.php",
-        "favorites" => "favorites.php",
+        "myfavorites" => "favorites.php",
+        "mycollection" => "collection.php",
     ];
 
     return $lesActions[$action] ?? $lesActions["home"];

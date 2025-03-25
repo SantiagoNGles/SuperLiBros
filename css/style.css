@@ -240,12 +240,6 @@ p {
   color: white;
 }
 
-.cta-buttons {
-  margin: 20px 0;
-  display: flex;
-  gap: 10px;
-}
-
 .btn-favorite {
   width: 100%;
   padding: 10px;
@@ -259,6 +253,21 @@ p {
 
 .btn-favorite:hover {
   background-color: #45a049;
+}
+
+.btn-remove {
+  width: 100%;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-remove:hover {
+  background-color: #d32f2f;
 }
 
 /* Forms */
@@ -318,6 +327,7 @@ small {
 footer {
   background-color: #333;
   color: #fff;
+  margin-top: 50px;
   padding: 40px 0 20px;
 }
 

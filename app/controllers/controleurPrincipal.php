@@ -1,5 +1,6 @@
 <?php
-function controleurPrincipal($action) {
+function controleurPrincipal($action)
+{
     $lesActions = array();
 
     $lesActions = [
@@ -10,6 +11,7 @@ function controleurPrincipal($action) {
         "profile" => "profile.php",
         "deleteAccount" => "deleteAccount.php",
         "games" => "games.php",
+        "favorites" => "favorites.php",
     ];
 
     return $lesActions[$action] ?? $lesActions["home"];

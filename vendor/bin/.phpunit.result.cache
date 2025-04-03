@@ -1,0 +1,1 @@
+{"version":1,"defects":{"UserTest::testGetUserByIdReturnsUser":4,"UserTest::testGetUserByIdReturnsFalseWhenNotFound":3},"times":{"UserTest::testGetUserByIdReturnsUser":0.017,"UserTest::testGetUserByIdReturnsFalseWhenNotFound":0.001}}

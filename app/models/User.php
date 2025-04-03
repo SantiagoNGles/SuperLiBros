@@ -1,12 +1,29 @@
+app\models\User.
 <?php
-class User {
-    private $conn;
-    
-    public function __construct() {
-        $this->conn = connexionPDO();
+class User
+{
+    protected $conn;
+
+    public function __construct($connection = null)
+    {
+        if ($connection) {
+            $this->conn = $connection;
+        } else {
+            // Utilisez include_once ou require_once pour charger la fonction connexionPDO si nécessaire
+            // include_once __DIR__ . '/../config/database.php';
+            // $this->conn = connexionPDO();
+
+            // Ou gardez cette partie vide et utilisez setConnection plus tard
+        }
     }
 
-    public function create($username, $email, $password) {
+    public function setConnection($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    public function create($username, $email, $password)
+    {
         try {
             $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE username = ? OR email = ?");
             $stmt->execute([$username, $email]);
@@ -30,7 +47,8 @@ class User {
         }
     }
 
-    public function authenticate($username, $password) {
+    public function authenticate($username, $password)
+    {
         try {
             $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = :username");
             $stmt->execute(['username' => $username]);
@@ -47,30 +65,32 @@ class User {
         }
     }
 
-    public function getUserById($id) {
+    public function getUserById($id)
+    {
         try {
             $stmt = $this->conn->prepare("SELECT id, username, email, email FROM users WHERE id = :id");
             $stmt->execute(['id' => $id]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        
+
             return $user ? $user : false; // Retourne false au lieu de []
         } catch (PDOException $e) {
             error_log("Erreur getUserById : " . $e->getMessage());
             return false;
         }
     }
-    
-    public function updateUsername($id, $username) {
+
+    public function updateUsername($id, $username)
+    {
         try {
             // Vérifier si le nom d'utilisateur existe déjà
             $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE username = ? AND id != ?");
             $stmt->execute([$username, $id]);
             $count = $stmt->fetchColumn();
-    
+
             if ($count > 0) {
                 return false; // Le nom d'utilisateur existe déjà
             }
-    
+
             $stmt = $this->conn->prepare("UPDATE users SET username = :username WHERE id = :id");
             return $stmt->execute([
                 'username' => $username,
@@ -81,18 +101,19 @@ class User {
             return false;
         }
     }
-    
-    public function updateEmail($id, $email) {
+
+    public function updateEmail($id, $email)
+    {
         try {
             // Vérifier si l'email existe déjà
             $stmt = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE email = ? AND id != ?");
             $stmt->execute([$email, $id]);
             $count = $stmt->fetchColumn();
-    
+
             if ($count > 0) {
                 return false; // L'email existe déjà
             }
-    
+
             $stmt = $this->conn->prepare("UPDATE users SET email = :email WHERE id = :id");
             return $stmt->execute([
                 'email' => $email,
@@ -104,7 +125,8 @@ class User {
         }
     }
 
-    public function deleteUserById($id) {
+    public function deleteUserById($id)
+    {
         try {
             $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
             return $stmt->execute(['id' => $id]);
@@ -113,6 +135,6 @@ class User {
             return false;
         }
     }
-    
+
 
 }

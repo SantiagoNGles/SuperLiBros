@@ -71,7 +71,6 @@ $userCollection = getUserCollection($_SESSION['user_id']);
     <table class="collection-table">
         <thead>
             <tr>
-                <th>#</th>
                 <th>Image</th>
                 <th>Titre</th>
                 <th>Développeur</th>
@@ -84,7 +83,6 @@ $userCollection = getUserCollection($_SESSION['user_id']);
         <tbody>
             <?php foreach ($userCollection as $item): ?>
                 <tr>
-                    <td><?php echo $item['collection_id']; ?></td>
                     <td><img src="<?php echo BASE_URL . $item['image_url']; ?>"
                             alt="<?php echo htmlspecialchars($item['title']); ?>" class="game-thumbnail"></td>
                     <td><?php echo htmlspecialchars($item['title']); ?></td>

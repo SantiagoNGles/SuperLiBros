@@ -34,7 +34,6 @@ function getUserCollection($userId)
 
     $stmt = $conn->prepare("
         SELECT 
-            c.id AS collection_id, 
             g.id AS game_id, 
             g.title, 
             g.developer, 

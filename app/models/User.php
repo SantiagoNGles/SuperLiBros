@@ -1,4 +1,3 @@
-app\models\User.
 <?php
 class User
 {
@@ -9,11 +8,8 @@ class User
         if ($connection) {
             $this->conn = $connection;
         } else {
-            // Utilisez include_once ou require_once pour charger la fonction connexionPDO si nécessaire
-            // include_once __DIR__ . '/../config/database.php';
-            // $this->conn = connexionPDO();
-
-            // Ou gardez cette partie vide et utilisez setConnection plus tard
+            include_once __DIR__ . '/../config/database.php';
+            $this->conn = connexionPDO();
         }
     }
 

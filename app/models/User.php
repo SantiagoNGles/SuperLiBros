@@ -8,7 +8,7 @@ class User
         if ($connection) {
             $this->conn = $connection;
         } else {
-            include_once __DIR__ . '/../config/database.php';
+            include_once __DIR__ . '/../../config/database.php';
             $this->conn = connexionPDO();
         }
     }

@@ -346,10 +346,10 @@ small {
   padding: 10px;
 }
 
-/* Notation par étoiles */
+/* Star rating */
 .star-rating {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row; /* affichage de gauche à droite */
   justify-content: center;
 }
 
@@ -358,13 +358,19 @@ small {
 }
 
 .star-rating label {
-  color: #ddd;
   font-size: 30px;
+  color: #ddd;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.star-rating input:checked ~ label,
-.star-rating input:hover ~ label {
+/* Hover: change uniquement l’étoile survolée */
+.star-rating label:hover {
+  color: rgb(152, 152, 152);
+}
+
+/* Sélection: change uniquement l’étoile cochée */
+.star-rating input:checked + label {
   color: gold;
 }
 

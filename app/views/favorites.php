@@ -14,13 +14,6 @@
                         <h3><?php echo htmlspecialchars($game['title']); ?></h3>
                         <p>Développeur : <?php echo htmlspecialchars($game['developer']); ?></p>
                         <p>Date de sortie : <?php echo date('d/m/Y', strtotime($game['release_date'])); ?></p>
-
-                        <form method="POST" action="<?php echo BASE_URL; ?>?action=favorites">
-                            <input type="hidden" name="game_id" value="<?php echo $game['id']; ?>">
-                            <button type="submit" name="remove_favorite" class="btn btn-remove">
-                                Retirer des favoris
-                            </button>
-                        </form>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -62,6 +62,8 @@ $userCollection = getUserCollection($_SESSION['user_id']);
             </div>
         </div>
 
+
+
         <button type="submit" name="add_to_collection">Ajouter à ma collection</button>
     </form>
 </div>

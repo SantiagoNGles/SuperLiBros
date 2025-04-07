@@ -16,7 +16,7 @@
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <form method="POST" action="<?php echo BASE_URL; ?>?action=games">
                                 <input type="hidden" name="game_id" value="<?php echo $game['id']; ?>">
-                                <button type="submit" name="add_favorite" class="btn btn-favorite">
+                                <button type="submit" name="add_favorite" class="btn-favorite">
                                     Ajouter aux favoris
                                 </button>
                             </form>

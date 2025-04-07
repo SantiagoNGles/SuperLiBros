@@ -25,21 +25,4 @@ class Favorites
             return [];
         }
     }
-
-    public function removeGameFromFavorites($userId, $gameId)
-    {
-        try {
-            $stmt = $this->conn->prepare("
-                DELETE FROM favorites 
-                WHERE user_id = :userId AND game_id = :gameId
-            ");
-            return $stmt->execute([
-                'userId' => $userId,
-                'gameId' => $gameId
-            ]);
-        } catch (PDOException $e) {
-            error_log("Erreur removeGameFromFavorites : " . $e->getMessage());
-            return false;
-        }
-    }
 }
